@@ -1,0 +1,90 @@
+/*configuracion general */
+body
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   align-items: center;
+    /*justify-content: center;*/
+    display:flex;
+    flex-direction: column;
+}
+
+/*configuracion del candidato  */
+#registroCandidatos
+{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/*caja de texto del Id del candidato  */
+#IDtext
+{
+    margin: 10px;
+    height: 40px;
+    
+}
+
+/*caja de texto del nombre del candidato  */
+#candidatoText
+{
+    margin: 10px; 
+    height: 40px;
+    
+}
+
+/*boton de vregistrar al candidato  */
+#registroButton
+{
+    margin: 20px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #8ca9df;
+    
+}
+
+/*configuracion del voto  */
+#IDvoto
+{
+    display: flex;
+    flex-direction: column;
+}
+
+/*caja de texto del Id del candidato */
+#candidatoId
+{
+    height: 40px;
+    
+}
+
+/*boton de votar  */
+#votarButton
+{
+    margin: 10px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #8ca9df;
+   
+}
+
+/*configuracion de los botones */
+#botones
+{
+    margin: 30px;
+    justify-content: left;
+}
+
+/*boton de ver la lista de votos  */
+#votarList
+{
+    margin: 10px;
+    cursor: pointer;
+    background-color: #8ca9df;
+}
+
+/*boton de ver la lista de candidatos  */
+#candidatosList
+{
+    margin: 10px;
+    cursor: pointer;
+    background-color: #8ca9df;
+}
