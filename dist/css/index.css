@@ -2,8 +2,8 @@
 body
 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   align-items: center;
-    /*justify-content: center;*/
+    align-items: center;
+    justify-content: center;
     display:flex;
     flex-direction: column;
 }
@@ -21,6 +21,7 @@ body
 {
     margin: 10px;
     height: 40px;
+    border: 1px solid #8ca9df;
     
 }
 
@@ -29,16 +30,20 @@ body
 {
     margin: 10px; 
     height: 40px;
+    border: 1px solid #8ca9df;
+    border-radius: 4px;
     
 }
 
 /*boton de vregistrar al candidato  */
 #registroButton
-{
+{ 
     margin: 20px;
     height: 40px;
     cursor: pointer;
     background-color: #8ca9df;
+    border: #8ca9df;
+    border-radius: 4px;
     
 }
 
@@ -53,6 +58,9 @@ body
 #candidatoId
 {
     height: 40px;
+    /*border: #8ca9df;*/
+    border: 1px solid #8ca9df;
+    border-radius: 4px;
     
 }
 
@@ -63,6 +71,8 @@ body
     height: 40px;
     cursor: pointer;
     background-color: #8ca9df;
+    border: #8ca9df;
+    border-radius: 4px;
    
 }
 
@@ -79,6 +89,8 @@ body
     margin: 10px;
     cursor: pointer;
     background-color: #8ca9df;
+    border: #8ca9df;
+    border-radius: 4px;
 }
 
 /*boton de ver la lista de candidatos  */
@@ -87,4 +99,6 @@ body
     margin: 10px;
     cursor: pointer;
     background-color: #8ca9df;
+    border: #8ca9df;
+    border-radius: 4px;
 }
