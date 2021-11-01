@@ -18,83 +18,69 @@ function registrarCandidatos(candidato){
     //escribir un nuevo usuario
 }
 
-/*function getUsuarios(){
+//agregar registro a la base
+function getCandidatos(){
     const db= getDatabase();
-    const dbRef = ref(db, 'users');
+    const dbRef = ref(db, 'candidatos');
+
     onValue(dbRef, (snapshot)=>{
         const data= snapshot.val();
         console.log(data);
         actualizarLista(data);
     });
-}*/
 
+}
+
+//actualizar candidatos
+function actualizarLista(info)
+{
+    let listaCandidatos = "";
+
+    Object.keys(info).forEach((k, index)=>
+    {
+        listaCandidatos += "CANDIDATO "+info[k].CANDIDATO + " con ID " + info[k].ID + "\n";
+    });
+
+    alert(listaCandidatos);
+}
+
+//registrar voto
 function registrarVotos(votos){
     //obtener base de datos
     const db= getDatabase();
-    const dbRef = ref(db, 'users');
+    const dbRef = ref(db, 'votos/'+ votos.ID);
     set(dbRef, votos);
     
 }
 
-/*function actualizarLista(info){
-let texto= "";
-Object.keys(info).forEach((k,index)=>{
-    console.log(k, index);
-    texto+=k+"</br>";
-    //texto+=info[k].nombre+"</br>";
-    //texto+=info[k].pass+"</br>";
-});
-userList.innerHTML=texto;
-}*/
-
-function getCandidatos(){
-    const db= getDatabase();
-    const dbRef = ref(db, 'candidatos');
-    onValue(dbRef, (snapshot)=>{
-        const data= snapshot.val();
-        console.log(data);
-        actualizarLista(data);
-    });
-
-}
-
+//agregar registro a la base
 function getVotos()
 {
     const db = getDatabase();
     const dbRef = ref(db, "votos");
 
-    onValue(dbRef, (snapshot) => 
+   onValue(dbRef, (snapshot) => 
     {
         const data = snapshot.val();
         console.log(data);
-        actualizarVotos(data);        
+       actualizarVotos (data);     
     });
 }
 
-function actualizarVotos(info) 
-{
-    let text = "";
+//actualizar votos
+function actualizarVotos(data) {
 
-    Object.keys(info).forEach((k, index) =>
-    {
-        text += info[k].VOTOS
-        S + ", " + info[k].CANDIDATO + "\n";
+    let votos = "";
+
+    Object.keys(data).forEach((k, index) => {
+
+        votos += data[k].ID + " tiene  " + data[k].VOTOS + " votos  " + "\n";
+        
     });
     
-    alert(text);
+    alert(votos);
 }
 
-function actualizarLista(info)
-{
-    let text = "";
-
-    Object.keys(info).forEach((k, index)=>
-    {
-        text += info[k].CANDIDATO + ", id: " + info[k].ID + "\n";
-    });
-
-    alert(text);
-}
 
 //formulario de registro
 const id = document.getElementById("IDtext");
@@ -109,56 +95,54 @@ const votarButton = document.getElementById("votarButton");
 const candidatoListButton= document.getElementById("candidatosList");
 const votoListButton = document.getElementById("votarList");
 
-
-
-//console.log(username);
-
-const guardar = (e, event) =>
+const registrarCandidato = (e, event) =>
 {
- 
-    let votos = 0;
-
     let candidato =
     {
         ID: id.value,
         CANDIDATO: nombreCandidato.value
     };
 
-    let voto =
-    {
-        VOTOS: votos,
-        CANDIDATO: nombreCandidato.value
-    }
-
     registrarCandidatos(candidato);
-    registrarVotos(voto);
+ 
 }
 
-const Votar = (voto) =>
-{   
-        Object.keys(voto).forEach((k, index)=>
-        {
-            voto.VOTES++;
+/*const registrarVoto = (e, event) => {
 
-            alert("Realizó su voto");
+    const votos = {
+
+        ID: idCandidato.value,
+        CANDIDATO: nombreCandidato.value
+
+    }
+
+    registrarVotos(votos);
+}*/
+
+const votarCandidato = (votos) =>
+{   
+    const voto = {
+
+        ID: idCandidato.value,
+        CANDIDATO: nombreCandidato.value,
+        VOTOS: 0
+
+    }
+
+    registrarVotos(voto);
+
+        Object.keys(votos).forEach((k, index)=>
+        {
+            votos.VOTOS++;
+
+            alert("Se realizó su voto");
         });
 }
 
-registroButton.addEventListener("click", guardar);
-votarButton.addEventListener("click", Votar);
+registroButton.addEventListener("click", registrarCandidato);
+//votarButton.addEventListener("click", registrarVoto);
+votarButton.addEventListener("click", votarCandidato);
+
 
 candidatoListButton.addEventListener("click", getCandidatos);
 votoListButton.addEventListener("click", getVotos);
-
-/*const registroEvento=()=>{
-    const user ={
-        nombre: username.value,
-        pass: password.value
-    }
-   // const jsonObject= JSON.stringify(user);
-    //console.log(jsonObject);
-    registrarUsuario(user);
-}
-
-registreBtn.addEventListener("click", registroEvento);
-getUsuarios();*/

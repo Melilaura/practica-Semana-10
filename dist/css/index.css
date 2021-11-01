@@ -1,5 +1,5 @@
 /*configuracion general */
-body
+#titulo
 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     align-items: center;
@@ -13,6 +13,12 @@ body
 {
     display: flex;
     flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    
     
 }
 
@@ -22,6 +28,8 @@ body
     margin: 10px;
     height: 40px;
     border: 1px solid #8ca9df;
+    border-radius: 4px;
+    padding: 10px;
     
 }
 
@@ -32,6 +40,7 @@ body
     height: 40px;
     border: 1px solid #8ca9df;
     border-radius: 4px;
+    padding: 10px;
     
 }
 
@@ -44,13 +53,18 @@ body
     background-color: #8ca9df;
     border: #8ca9df;
     border-radius: 4px;
-    
+    padding: 10px;
 }
 
 /*configuracion del voto  */
 #IDvoto
 {
     display: flex;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+    display:flex;
     flex-direction: column;
 }
 
@@ -61,7 +75,7 @@ body
     /*border: #8ca9df;*/
     border: 1px solid #8ca9df;
     border-radius: 4px;
-    
+    padding: 10px;
 }
 
 /*boton de votar  */
@@ -73,6 +87,7 @@ body
     background-color: #8ca9df;
     border: #8ca9df;
     border-radius: 4px;
+    padding: 10px;
    
 }
 
@@ -81,6 +96,12 @@ body
 {
     margin: 30px;
     justify-content: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    
 }
 
 /*boton de ver la lista de votos  */
@@ -91,6 +112,7 @@ body
     background-color: #8ca9df;
     border: #8ca9df;
     border-radius: 4px;
+    padding: 10px;
 }
 
 /*boton de ver la lista de candidatos  */
@@ -101,4 +123,5 @@ body
     background-color: #8ca9df;
     border: #8ca9df;
     border-radius: 4px;
+    padding: 10px;
 }
